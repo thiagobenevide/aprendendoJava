@@ -1,0 +1,3 @@
+3.3) Análise e explique o que acontece na herança implementada. 
+
+		O filho está herdando apenas o sobrenome do pai, pois, é o primeiro que está sendo passado por parâmetro.
