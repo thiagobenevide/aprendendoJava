@@ -7,9 +7,9 @@ public class Compra {
 	
 	public Compra(int id, double valor, int ultima) {
 		super();
-		this.id = id;
-		this.valor = valor;
-		this.ultima = ultima;
+		this.setId(id);
+		this.setValor(valor);
+		this.setUltima(ultima);
 	}
 	
 	public int getId() {

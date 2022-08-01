@@ -1,21 +1,21 @@
 package entidades;
 
-public class AnivesarioCliente entends Campanha {
+import java.time.LocalDateTime;
+
+public class AnivesarioCliente extends Campanha {
 	
-	
-	public AniversarioCliente(String nome, int ano, int numero) {
+	public AnivesarioCliente(String nome, int ano, int numero) {
 		super(nome, ano, numero);
+		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 	@Override
 	
-	public Produto indicarProduto(Cliente cliente) {
+	public  Produto indicarProduto(Cliente cliente) {
 	//Dia se tiver definino a data do tipo date
-		
 		if (cliente.getDataNascimento().getDate()==LocalDateTime.now().getDayOfMonth()
 				&&
-				cliente.getDataNascimento().getMonth=LocalDateTime.now().getMonthValue()) {
+				cliente.getDataNascimento().getMonth()=LocalDateTime.now().getMonthValue()) {
 			
 			if (cliente.isAceitaReceberPromocao())
 				if (cliente.getSexo().equalsIgnoreClass("masculino")) {

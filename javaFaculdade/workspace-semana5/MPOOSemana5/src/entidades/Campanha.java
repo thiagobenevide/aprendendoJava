@@ -1,6 +1,6 @@
 package entidades;
 
-public class Campanha {
+public abstract class Campanha implements Cliente{
 	private String nome;
 	private int ano;
 	private int numero;
@@ -11,12 +11,8 @@ public class Campanha {
 		this.ano = ano;
 		this.numero = numero;
 	}
-	
-	
-	public abstract Produto indicarProduto(Cliente cliente){
-		
-	}
-	
+
+	public abstract Produto indicarProduto(Cliente cliente);
 	
 	public String getNome() {
 		return nome;
