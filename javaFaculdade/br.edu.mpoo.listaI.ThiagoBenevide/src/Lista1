@@ -1,0 +1,57 @@
+1) É um tema amplo porém é composto por um conjunto de funções especificas, sistema operacional ou apoio
+2) Editor, compilador, linker, depurador, modelagem, geração de codigo
+3) Significa examinar um programa a fim de identificar localizar e solucionar problemas
+4) JVM, compilador java e APIs
+5) JRE é um ambiente para execulção de progrmas java JDK, possui o JRE porém, com ele não se poder programar em java
+6) Converter código fonte em bytecodes e gerenciar apps
+
+
+Lista 01
+1 - Em paradigmas estruturados suas funcionalidades estão em subrotinas geralmente quando a criação em grandes blocos de código fonte sem organização
+dos dados;
+	Em orientação a objetors há uma divisão por classes, permitindo que cada classe centralize em si todos os dados relaitvos ao conceito que ela 
+representa com ganhos na legibilidade do código, facilidadde na manutenção e expansão na programação simplificada
+
+2 - 
+	int multiplicar(int n1, int n2){
+		int resultado = n1 * n2;
+		return resuldado;
+	}
+	
+3 - Primeramente selecionando os requisitos funcionais e requisiotos não funcionais, partindo desse ponto pode ser criado o diagrama de casos de uso
+	
+	Casos de usso -> cadastroar livros no estoque
+	Requisitos -> Cadastrar livros no sistema
+				  Definição o sistema nçao permitirar cadastrar livro com o mesmo nome
+	Diagrama de classe
+							CadastrarLivro
+							+ nome: String
+							+ autor: String
+							
+4 - São métodos para a criação de um objeto não possuem valor de retorno e tem sempre o mesmo nome da classe que pertence
+	Uma classe pode ter dois ou mais construtores desde que todos tenham assinaturas diferentes
+
+5 - Porque se fosse não seria possível acessala e iniciar o programa
+
+
+6 - Acesso direto de memória permite que o dispositivo mova os dados do pacote diretament e para a memória do sistema reduzindo utilização de CPU
+
+	Acesso indireto seria o famosos ponteiro da linguagem C
+	
+Em C
+	# define PIND  _SFR_I08(0x10)
+	/* input Pind, Port D*/
+	
+Com Ponteiros
+	uint8_t* PointBmap = 0x38
+	*PortBMap = 0x10
+	
+No Java
+Eden: área de memória para objeos
+S1 e S2: quando o GC os sobreviventes vem para cá
+Old Generation: quando GC os sobriventes de S1 e S2 vem para cá
+Tudo isso após um GC
+
+
+
+7 - Set serve para alterar e Get serve apenas para visualizar.
