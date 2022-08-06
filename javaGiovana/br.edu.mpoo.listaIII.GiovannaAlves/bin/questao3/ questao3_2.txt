@@ -1,3 +1,0 @@
-3.2) Em #main.py, qual a saída para filho.metodo()?
-
-	A saída para filho.metodo() é "pai".

@@ -1,6 +1,0 @@
-
-public class Aula7 {
-
-	
-	
-}

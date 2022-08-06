@@ -1,6 +1,0 @@
-5.4) A variavel err, é onde armazena a saída padrão para mensagens de erro do sistema e é do tipo PrintStream, já a variavel out, é armazenada a saída padrão das mensagens
-um exemplo de uso da variável out é o System.out.println(), é possível também mudar a saída padrão para que não seja geralmetne em um console, já a variavel err, é utilizada para 
-impressão de textos de erro, é possível diferenciar as duas pela cor, a err utiliza a cor vermelha. A variavel err também é possível alterar a saída padrão para que não seja 
-expecificamente em console, um exemplo de saida err é o System.err.println();
-
-Referências: https://www.devmedia.com.br/destrinchando-a-classe-java-lang-system/29808

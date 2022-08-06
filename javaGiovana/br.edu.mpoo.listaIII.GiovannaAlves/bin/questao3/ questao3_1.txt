@@ -1,3 +1,0 @@
-3.1) Em #main.py, qual a saída para print(filho.sobrenome)?
-
-		A saída para print(filho.sobrenome), é o sobrenome do pai "DEmery".

@@ -1,7 +1,0 @@
-O sistema apresenta falhas por ter dois bancos de dados, algo que já foi resolvido no item 7.1, algo sem necessidade, já que podemos utilizar a mesma base, para isso,
-agora que estamos fazendo uso da herança que nos possibilita programar para utilizar apenas uma base. 
-A criação das bases também, estavam como públicas, possibilitando o acesso ao arrayList, isso foi modificado, agora está privado. 
-Além disso, o sistema possui 4 atributos iguais para clientes e funcionarios, porém, não fazia uso da herança,foi modificado também, criei uma classe pessoa,
-uma para cliente e uma para funcionario, ambos herdam os atributos de pessoa.
-
-OBS: A CODIFICAÇÃO É A MESMA QUE ESTÁ NA QUESTAO 7.1 e 7.3 (AS FALHAS JÁ ESTÃO CORRIGIDAS). O DIAGRAMA ESTÁ NA PASTA.
