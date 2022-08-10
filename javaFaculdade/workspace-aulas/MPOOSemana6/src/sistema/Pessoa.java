@@ -2,7 +2,7 @@ package sistema;
 
 import java.util.Date;
 
-public class Pessoa {
+public abstract class Pessoa {
 	private String nome;
 	private Telefone telefone;
 	private Endereco endereco;
@@ -71,5 +71,15 @@ public class Pessoa {
 	public void setVoucher(double voucher) {
 		this.voucher = voucher;
 	}
+
+	@Override
+	public String toString() {
+		return "Pessoa [nome=" + nome + ", telefone=" + telefone + 
+				", endereco=" + endereco + ", sexo=" + sexo
+				+ ", cpf=" + cpf + ", dataNascimento=" + dataNascimento + 
+				", voucher=" + voucher + "]";
+	}
+	
+	
 	
 }

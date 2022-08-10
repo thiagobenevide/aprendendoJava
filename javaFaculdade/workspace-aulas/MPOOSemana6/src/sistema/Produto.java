@@ -29,6 +29,8 @@ public class Produto {
 				this.validade = validade;
 			}
 
+	//Como Não permitir que o produto vencido seja cadastrado?
+	//Como e onde indicar os produtos que estão a um mês de vencer?
 	
 	public String getNome() {
 		return nome;

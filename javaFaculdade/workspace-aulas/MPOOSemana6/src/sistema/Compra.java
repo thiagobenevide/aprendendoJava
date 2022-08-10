@@ -3,23 +3,20 @@ package sistema;
 import java.util.ArrayList;
 
 public class Compra {
+	private static int numero;
 	private int id;
 	private double valor;
 	private static int ultima;
+	Cliente cliente;
+	Produto produto;
 	private ArrayList<Produto>produtos;
 	
-	public Compra(int id, double valor, int ultima) {
+	
+	public Compra(Cliente cliente, Produto produto) {
 		numero++;
-		this.id = id;
-		this.valor = valor;
-	}
-	
-	
-	public Compra(int id, double valor, ArrayList<Produto> produtos) {
-		super();
-		this.id = id;
-		this.valor = valor;
-		this.produtos = produtos;
+		this.id = numero;
+		this.cliente = cliente;
+		this.produto = produto;
 	}
 	
 	
@@ -31,7 +28,7 @@ public class Compra {
 	}
 
 	private void valorCompra() {
-		if(cliente.isAceitaReceberPromocao()) {
+		if(cliente.isAceitaProdutoPromocional()) {
 			valor+=produtos.get(produtos.size()-1).getPrecoPromocional();
 		}else {
 			valor+=produtos.get(produtos.size()-1).getPreco();
