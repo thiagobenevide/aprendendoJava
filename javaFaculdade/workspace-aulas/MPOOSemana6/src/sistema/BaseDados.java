@@ -41,7 +41,7 @@ public class BaseDados {
 	private static Cliente buscarCliente(Cliente cliente) {
 		for(Cliente clienteCurrent:clientes) {
 			if(clienteCurrent.getCpf().equalsIgnoreCase(cliente.getCpf())) {
-				return cliente;
+				return clienteCurrent;
 			}
 		}
 		return null;
