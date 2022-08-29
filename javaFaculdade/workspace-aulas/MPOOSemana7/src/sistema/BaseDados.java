@@ -18,14 +18,12 @@ public class BaseDados {
 		
 		//1 Caso de polimorfismo de objetos
 		//Adicionando instancias de objetos
-		pessoas.add(new Cliente("Jose Silva",
-				new Telefone(87,99992222),
-				new Endereco("Rua Uast", "Universitario", "Serra Talhada", "PE", "56640-000"),
-				new Email("zezin@gmail.com"),
-				"masculino",
-				true,
-				"000-0000-0000"));
-		pessoas.add(new Funcionario());
+		/*
+		 * pessoas.add(new Cliente("Jose Silva", new Telefone(87,99992222), new
+		 * Endereco("Rua Uast", "Universitario", "Serra Talhada", "PE", "56640-000"),
+		 * new Email("zezin@gmail.com"), "masculino", true, "000-0000-0000"));
+		 * pessoas.add(new Funcionario());
+		 */
 		
 	}
 	

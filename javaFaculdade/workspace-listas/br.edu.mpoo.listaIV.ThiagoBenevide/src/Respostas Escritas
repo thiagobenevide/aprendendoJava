@@ -1,0 +1,12 @@
+Respostas
+
+1.1) Por meio de um método abstrato de uma classe abstrata
+
+2) A sobreescrita é criar um novo método na classe filha contendo a mesma assinatura e mesmo tipo de retorno no método sobreescrito dessa forma utiliza-se conceitos de polimorfismo
+A sobrecarga permite utilizar métodos com o mesmo nome porém com assinatura diferente.
+
+
+3) Na verdade o que pode existir é um sombreamento que é prática de usar variáveis em escopos sobrepostos com o mesmo nome, onde a variável no escopo de baixo nível substitui o variável do escopo de alto nível.
+
+
+4) O Super() significa que o construtor está herdando da SuperClasse Object mas também de outra classe com herança, porém a geração em sí é por questões de template dos criadores do próprio eclipse
