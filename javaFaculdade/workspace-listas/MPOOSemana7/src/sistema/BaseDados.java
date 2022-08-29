@@ -5,21 +5,23 @@ import java.util.ArrayList;
 public class BaseDados {
 	private static ArrayList<Pessoa>pessoas;
 	private static ArrayList<Compra>compras;
-	
-	//Métodos Compra
+	private static ArrayList<Produto>produtos;
+
 	
 	public static void crateBase() {
 		compras = new ArrayList<Compra>();
 		pessoas = new ArrayList<Pessoa>();
-		
+		produtos = new ArrayList<Produto>();
 		inicializarBase();
 	}
-	
 	
 	
 	public static void inicializarBase() {
 		
 	}
+	
+	
+	//Métodos Compra
 	
 	
 	public static boolean adicionarCompra(Compra compra) {
@@ -34,6 +36,18 @@ public class BaseDados {
 		for(Compra compraCurrent: compras) {
 			if(compraCurrent.getId()==id);
 			return compraCurrent;
+		}
+		return null;
+	}
+	
+	public static Compra buscarCompra(Compra compra) {
+		if(compra!=null) {
+			for(Compra compraCurrent: compras) {
+				if(compraCurrent.getId()==compra.getId()) {
+					return compraCurrent;
+				}
+			}
+			
 		}
 		return null;
 	}
@@ -89,20 +103,71 @@ public class BaseDados {
 	}
 	
 	
+	//Métodos Produtos
+	
+	
+	private static Produto buscarProduto(Produto produto) {
+		if(produto!=null) {
+			for(Produto produtoCurrent: produtos) {
+				if(produtoCurrent.getNome().equalsIgnoreCase(produto.getNome())) {
+					return produtoCurrent;
+				}
+			}
+		}
+		return null;
+	}
+	
+
+	private static Produto buscarProduto(String nome) {
+		
+		for(Produto produtoCurrent: produtos) {
+			if(produtoCurrent.getNome().equalsIgnoreCase(nome)) {
+				return produtoCurrent;
+			}
+		}
+		return null;
+	}
+	
+	
+	public static boolean isProduto(Produto produto) {
+		if(produto!=null) {
+			return produtos.contains(buscarProduto(produto));
+		}
+		return false;
+	}
+	
+	public static boolean isProduto(String nome) {
+		return produtos.contains(buscarProduto(nome));
+	}
+	
+	
+	public static boolean atualizarProduto(Produto produtoOld, Produto produtoNew) {
+		if(produtoOld!=null && produtoNew!=null) {
+			produtos.set(produtos.indexOf(buscarProduto(produtoOld)), produtoNew);
+			return true;
+		}
+		return false;
+	}
+	
+	
+	public static boolean removerProduto(Produto produto) {
+		if(produto!=null) {
+			produtos.remove(produtos.indexOf(buscarProduto(produto)));
+			return true;
+		}
+		return false;
+	}
+	
 	
 	public static ArrayList<Pessoa> getPessoas() {
 		return pessoas;
 	}
-	public static void setPessoas(ArrayList<Pessoa> pessoas) {
-		BaseDados.pessoas = pessoas;
-	}
 	public static ArrayList<Compra> getCompras() {
 		return compras;
 	}
-	public static void setCompras(ArrayList<Compra> compras) {
-		BaseDados.compras = compras;
+	public static ArrayList<Produto> getProdutos() {
+		return produtos;
 	}
-	
 	
 	
 	

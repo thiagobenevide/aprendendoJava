@@ -46,6 +46,20 @@ public class BaseDados {
 	}
 
 	
+	public static Compra buscarCompra(Compra compra) {
+		if(compra!=null) {
+			for (Compra compraCurrent:compras) {
+				if (compraCurrent.getId()== compra.getId()) {
+					return compraCurrent;
+				}
+			}
+		}
+			
+		return null;
+	}
+
+	
+	
 	//Métodos do Pessoa na base de dados
 	
 	private static Pessoa buscarPessoa(Pessoa pessoa) {
@@ -97,6 +111,15 @@ public class BaseDados {
 			return true;
 		}
 		return false;
+		
 	}
+	
+
+	public static ArrayList<Pessoa> getPessoas() {
+		return pessoas;
+	}
+
+	
+	
 	
 }

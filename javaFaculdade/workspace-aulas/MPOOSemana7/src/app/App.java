@@ -1,6 +1,8 @@
 package app;
 
 import sistema.BaseDados;
+import sistema.Funcionario;
+import sistema.Pessoa;
 
 public class App {
 	
@@ -8,20 +10,11 @@ public class App {
 		
 		
 		BaseDados.createBase();
-		//System.out.println((Cliente)BaseDados.pessoas.get(0).isAceitaReceberPromocao());
-		//System.out.println((Funcionario)BaseDados.pessoas.get(1).isAceitaReceberPromocao());
 		
-		
-		for(Pessoa pessoa:BaseDados.pessoas) {
+		for(Pessoa pessoa:BaseDados.getPessoas()) {
 			if(pessoa instanceof Funcionario) {
-				System.out.println(((Funcionario)pessoa).getMatricula());				
+				System.out.println(((Funcionario)pessoa).getCodMatricula());
 			}
 		}
-		
-		//Pequisa: O conceito de polimorfismo de objeto aplica-se apenas entre classes?
-		//			Caso contrario justufuqye sua resposta
 	}
-	
-	
-	
 }
