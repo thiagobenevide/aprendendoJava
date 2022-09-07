@@ -37,7 +37,16 @@ public class BaseDados {
 		return null;
 	}
 	
-	
+	public static boolean adicionarProduto(Produto produto) {
+		if(produto!=null) {
+			if(isProduto(produto)) {
+				return false;
+				
+			}
+			produtos.add(produto);
+		}
+		return false;
+	}
 	
 	
 	public static boolean isProduto(Produto produto) {
@@ -76,8 +85,12 @@ public class BaseDados {
 		if(produto==null && quantidade==0) {
 			return false;
 		}
-		buscarProduto(produto).getEstoque().setQuantidade(quantidade);
+		buscarProduto(produto).getEstoque().setQuantidade(produto.getEstoque().getQuantidade()-quantidade);
 		return true;
+	}
+
+	public static ArrayList<Produto> getProdutos() {
+		return produtos;
 	}
 	
 	

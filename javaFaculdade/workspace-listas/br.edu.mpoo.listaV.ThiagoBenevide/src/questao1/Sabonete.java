@@ -5,11 +5,11 @@ public class Sabonete extends Produto {
 	private double peso;
 	private String composicao;
 	
-
-	
-	public Sabonete(String nome, String fabricante, String codBarras, double preco, Estoque estoque) {
-		super(nome, fabricante, codBarras, preco, estoque);
-		// TODO Auto-generated constructor stub
+	public Sabonete(String nome, String fabricante, String codBarras, double preco, String fragancia, double peso, String composicao) {
+		super(nome, fabricante, codBarras, preco);
+		this.fragancia = fragancia;
+		this.peso = peso;
+		this.composicao = composicao;
 	}
 	
 	public String getFragancia() {

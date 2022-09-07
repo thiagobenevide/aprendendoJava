@@ -6,7 +6,7 @@ public class Vender {
 		if (produto!=null) {
 			if (BaseDados.isProduto(produto)) {
 				if(produto.getEstoque().getQuantidade() > 0) {
-					BaseDados.atualizarEstoque(produto, -quantidade);
+					BaseDados.atualizarEstoque(produto, quantidade);
 					return true;
 				}	
 			}
