@@ -36,7 +36,6 @@ public class Tela extends JFrame{
 	public Tela() {
 		super("Título");
 	
-		
 		JFrame jFrame = new JFrame("Título");
 		jFrame.setSize(300, 300);
 		jFrame.setResizable(false);

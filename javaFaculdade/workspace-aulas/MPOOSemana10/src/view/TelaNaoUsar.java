@@ -16,16 +16,11 @@ public class TelaNaoUsar {
 		jFrame.setLocationRelativeTo(null);
 		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jFrame.setVisible(true);
-		
-		
+			
 		jFrame.setLayout(new FlowLayout());
 		button1 = new JButton("OK");
 		button2 = new JButton("Cancel");
 		jFrame.add(button1);
 		jFrame.add(button2);
-		
 	}
-	
-	
-	
 }
