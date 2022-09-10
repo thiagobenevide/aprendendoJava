@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class BaseDados {
 	private static ArrayList<Campanha> campanhas;
-	private 
+	
 	
 	public static void createBase() {
-		
+		campanhas = new ArrayList<Campanha>();
 	}
 	
 	

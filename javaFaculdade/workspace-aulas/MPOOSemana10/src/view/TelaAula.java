@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.text.MaskFormatter;
 
-public class Tela extends JFrame{
+public class TelaAula extends JFrame{
 	JButton button1, button2;
 	JPanel panel;
 	JLabel label;
@@ -33,15 +33,14 @@ public class Tela extends JFrame{
 	JList list;
 	
 	
-	public Tela() {
+	public TelaAula() {
 		super("Título");
 	
-		JFrame jFrame = new JFrame("Título");
-		jFrame.setSize(300, 300);
-		jFrame.setResizable(false);
-		jFrame.setLocationRelativeTo(null);
-		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		jFrame.setVisible(true);
+		setSize(300, 300);
+		setResizable(false);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
 		setLayout(new FlowLayout());
 		
 		panel = new JPanel();
