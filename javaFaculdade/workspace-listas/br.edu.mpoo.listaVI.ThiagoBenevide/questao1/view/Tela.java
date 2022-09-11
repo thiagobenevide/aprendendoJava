@@ -1,10 +1,7 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.HeadlessException;
-import java.text.ParseException;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -20,80 +17,151 @@ import javax.swing.text.MaskFormatter;
 
 import questao1.SpringUtilities;
 
-public class Tela extends JFrame{
-	JButton button1;
-	JLabel labelTitulo, labelTipo, labelNome, labelCPF, labelFone, labelEmail;
-	JTextField nomeField, cpfField, foneField, emailField;
-	JCheckBox checkBox;
-	JRadioButton opcaoCliente, opcaoFuncionario;
-	ButtonGroup buttonGroup;
-	JPanel panelHeader, panelMain, panelMainButton, panelFooter;
+public class Tela extends JFrame {
+
+	private JLabel tituloLabel, tipoLabel, nomeLabel, cpfLabel, foneLabel, emailLabel, matriculaLabel;
+	private JTextField nomeField, cpfField, foneField, emailField, matriculaField;
+	private JCheckBox propragandaCheckBox;
+	private JRadioButton clienteRadioButton, funcioRadioButton;
+	private JButton adicionarButton;
 	
-	
-	public Tela() throws HeadlessException {
+	public Tela() {
 		super("Gerenciar Dados");
-		
-		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(300, 300);
+		//Iniciais
+		setSize(400, 300);
 		setLocationRelativeTo(null);
-		setLayout(new FlowLayout());
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLayout(new BorderLayout());
 		
-		//HEADER
-		labelTitulo = new JLabel("Cadastrar");
-		labelTitulo.setFont(new Font("", Font.BOLD, 20));
+		//Header
+		JPanel panelTitulo =  new JPanel(new BorderLayout());
+		tituloLabel = new JLabel("Cadastrar");
+		tituloLabel.setFont(new Font("", Font.BOLD, 20));
+		panelTitulo.add(tituloLabel, BorderLayout.NORTH);
 		
+		tipoLabel = new JLabel("Tipo: ");
 		
-		panelHeader = new JPanel(new BorderLayout());
-		panelHeader.add(labelTitulo, BorderLayout.NORTH);		
-		add(panelHeader, BorderLayout.NORTH);
+		JPanel panelRadioButton = new JPanel(new SpringLayout());
 		
-		//MAIN
+		clienteRadioButton = new JRadioButton("Cliente", true);
+		funcioRadioButton = new JRadioButton("Funcion�rio");
 		
-		panelMain = new JPanel();
+		ButtonGroup buttonGroup = new ButtonGroup();
 		
+		buttonGroup.add(clienteRadioButton);
+		buttonGroup.add(funcioRadioButton);
 		
-		//Buttons
-		labelTipo = new JLabel("Tipo: ");
-		opcaoCliente = new JRadioButton("Cliente", true);
-		opcaoFuncionario = new JRadioButton("Funcionario");
-		//Input
-		labelNome = new JLabel("Nome: ");
-		labelCPF = new JLabel("CPF: ");
-		labelFone = new JLabel("Fone: ");		
-		labelEmail = new JLabel("Email: ");
+		panelRadioButton.add(clienteRadioButton);
+		panelRadioButton.add(funcioRadioButton);
 		
+		SpringUtilities.makeCompactGrid(panelRadioButton, 1, 2, 6, 6, 6, 6);
+		
+		add(panelRadioButton, BorderLayout.CENTER);
+		
+		JPanel panelPrincipal = new JPanel(new SpringLayout());
+		
+		nomeLabel = new JLabel("Nome: ");
 		nomeField = new JTextField(10);
-		emailField = new JTextField(10);
-	
+		
+		
 		try {
-			cpfField = new JFormattedTextField(new MaskFormatter("###.###.###.##"));
-			cpfField.setColumns(9);
-			foneField = new JFormattedTextField(new MaskFormatter("(##) 9-####-####"));
+			cpfLabel = new JLabel("CPF: ");
+			cpfField = new JFormattedTextField(new MaskFormatter("###.###.###-##"));
+			cpfField.setColumns(10);
+			
+			foneLabel = new JLabel("Fone: ");
+			foneField = new JFormattedTextField(new MaskFormatter("(##) # ####-####"));
 			foneField.setColumns(10);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+			
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		panelMainButton = new JPanel();
-		panelMainButton.add(opcaoCliente);
-		panelMainButton.add(opcaoFuncionario);
+		emailLabel = new JLabel("E-mail: ");
+		emailField = new JTextField(10);
 		
-		panelMain.add(labelTipo);
-		panelMain.add(panelMainButton);
-		panelMain.add(labelNome);
-		panelMain.add(nomeField);
-		panelMain.add(labelCPF);
-		panelMain.add(cpfField);
-		panelMain.add(labelFone);
-		panelMain.add(foneField);
+		matriculaLabel = new JLabel("Matr�cula: ");
+		matriculaField = new JTextField(10);
 		
-		add(panelMain, BorderLayout.CENTER);
+		matriculaLabel.setVisible(false);
+		matriculaField.setVisible(false);
 		
-		//SpringUtilities.makeCompactGrid(panelMain, 6, 2, 6, 6, 6, 6);
+		panelPrincipal.add(tipoLabel);
+		panelPrincipal.add(panelRadioButton);
+		panelPrincipal.add(nomeLabel);
+		panelPrincipal.add(nomeField);
+		panelPrincipal.add(cpfLabel);
+		panelPrincipal.add(cpfField);
+		panelPrincipal.add(foneLabel);
+		panelPrincipal.add(foneField);
+		panelPrincipal.add(emailLabel);
+		panelPrincipal.add(emailField);
+		panelPrincipal.add(matriculaLabel);
+		panelPrincipal.add(matriculaField);
 		
-		setVisible(true);
+		SpringUtilities.makeCompactGrid(panelPrincipal, 6, 2, 6, 6, 6, 6);
+		
+		propragandaCheckBox = new JCheckBox("Aceita receber propaganda");
+		
+		adicionarButton = new JButton("Adicionar");
+		
+		add(panelTitulo, BorderLayout.NORTH);
+		add(panelPrincipal, BorderLayout.CENTER);
+		add(propragandaCheckBox, BorderLayout.PAGE_END);
+		add(adicionarButton, BorderLayout.EAST);
+		
+		setVisible(false);
+		
 	}
-
+	
+	
+	public JLabel getTituloLabel() {
+		return tituloLabel;
+	}
+	public JLabel getTipoLabel() {
+		return tipoLabel;
+	}
+	public JLabel getNomeLabel() {
+		return nomeLabel;
+	}
+	public JLabel getCpfLabel() {
+		return cpfLabel;
+	}
+	public JLabel getFoneLabel() {
+		return foneLabel;
+	}
+	public JLabel getEmailLabel() {
+		return emailLabel;
+	}
+	public JLabel getMatriculaLabel() {
+		return matriculaLabel;
+	}
+	public JTextField getNomeField() {
+		return nomeField;
+	}
+	public JTextField getCpfField() {
+		return cpfField;
+	}
+	public JTextField getFoneField() {
+		return foneField;
+	}
+	public JTextField getEmailField() {
+		return emailField;
+	}
+	public JTextField getMatriculaField() {
+		return matriculaField;
+	}
+	public JCheckBox getPropragandaCheckBox() {
+		return propragandaCheckBox;
+	}
+	public JRadioButton getClienteRadioButton() {
+		return clienteRadioButton;
+	}
+	public JRadioButton getFuncioRadioButton() {
+		return funcioRadioButton;
+	}
+	public JButton getAdicionarButton() {
+		return adicionarButton;
+	}
+	
 }
