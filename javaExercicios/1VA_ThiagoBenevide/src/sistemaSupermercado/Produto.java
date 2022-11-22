@@ -21,6 +21,10 @@ public class Produto {
 		this.perecivel = perecivel;
 		this.estoque = new Estoque(this);
 	}
+	
+	public Produto(String codBarras) {
+		this.codBarras = codBarras;
+	}
 
 
 

@@ -34,24 +34,15 @@ public class BaseDados {
 		return null;
 	}
 	
-	private static Produto buscarProduto(String codBarras) {
-	
-		for(Produto produtoCurrent:produtos) {
-			if(produtoCurrent.getCodBarras().equalsIgnoreCase(codBarras)) {
-				return produtoCurrent;
-			}
-		}
-		return null;
-	
-	}
 	
 	public static boolean isProduto(String codBarras) {
-		return produtos.contains(buscarProduto(codBarras));
+		return produtos.contains(buscarProduto(new Produto(codBarras)));
 	}
 	
 	public static boolean addProduto(Produto produto) {
+		Verificador verificado = new Verificador();
 		if(produto!=null && isProduto(produto.codBarras)) {
-			if(Verificador.isVerificarVencimento(produto)) {
+			if(verificado.) {
 				produtos.add(produto);
 				return true;
 			}
@@ -80,7 +71,7 @@ public class BaseDados {
 	
 	public static boolean alterarEstoque(String codBarras, int quantidade) {
 		if(isProduto(codBarras)) {
-			produtos.get(produtos.indexOf(buscarProduto(codBarras))).getEstoque().setQuantidade(quantidade);
+			produtos.get(produtos.indexOf(buscarProduto(new Produto(codBarras)))).getEstoque().setQuantidade(quantidade);
 			return true;
 		}
 		return false;

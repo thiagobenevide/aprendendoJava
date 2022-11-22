@@ -6,9 +6,8 @@ import java.util.Date;
 
 public class Verificador {
 	private static boolean verificarVencimento(Date validadeProduto) {
-		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		Date date = new Date();
-		
+		return true;
+	
 	}
 	
 	public static boolean isVerificarVencimento(Produto produto) {
