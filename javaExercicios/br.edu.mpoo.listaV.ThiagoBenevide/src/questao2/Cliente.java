@@ -12,13 +12,13 @@ public class Cliente {
 	
 	
 	
-	public Cliente(String cpf, String telefone, String nome, String email, ArrayList<Endereco> enderecos, String sexo) {
+	public Cliente(String cpf, String telefone, String nome, String email, String sexo) {
 		super();
 		this.cpf = cpf;
 		this.telefone = telefone;
 		this.nome = nome;
 		this.email = email;
-		enderecos.add(new Endereco(this));
+		this.enderecos = new ArrayList<Endereco>();
 		this.sexo = sexo;
 	}
 	
