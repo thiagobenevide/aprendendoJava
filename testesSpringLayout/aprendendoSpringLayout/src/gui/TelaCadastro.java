@@ -122,7 +122,10 @@ public class TelaCadastro extends JFrame{
 		add(adicionarButton, BorderLayout.EAST);
 		add(propagandaBox, BorderLayout.PAGE_END);
 		
-		setVisible(true);
+		
+		
+		setVisible(false);
+		
 	}
 
 	public JLabel getCadastrarLabel() {

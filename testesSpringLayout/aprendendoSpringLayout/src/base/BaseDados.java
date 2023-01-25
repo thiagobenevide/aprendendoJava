@@ -10,12 +10,8 @@ import entidade.UsuarioAbstract;
 
 public class BaseDados {
 
-	public static ArrayList<UsuarioAbstract>usuarios;
-	
-	
-	public static void createBase() {
-		usuarios =  new ArrayList<UsuarioAbstract>();
-	}
+	public static ArrayList<UsuarioAbstract>usuarios = new ArrayList<UsuarioAbstract>();
+
 	
 	public static UsuarioAbstract buscarUsuarios(UsuarioAbstract usuario) {
 		if(usuario!=null) {
