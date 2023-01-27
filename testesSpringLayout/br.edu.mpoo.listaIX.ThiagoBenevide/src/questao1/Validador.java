@@ -1,5 +1,7 @@
 package questao1;
 
+import java.util.InputMismatchException;
+
 import javax.swing.JOptionPane;
 
 public class Validador {
@@ -31,16 +33,26 @@ public class Validador {
 			}
 			
 			resultado = 11-(soma%11);
-			if((resultado==10)||(resultado==11)) dig10 = "0";
+			if((resultado==10)||(resultado==11)) dig10 = '0';
+			else dig10 = (char)(resultado +48);
+			
 			
 			/*Validando o segundo número importante*/
 			soma = 0;
 			peso = 11;
-			for(i=0;i<10)
+			for(i=0;i<10; i++) {
+				num = (int)(cpf.charAt(i)-48);
+				soma = soma + (num*peso);
+				peso = peso-1;
+			}
+			resultado = 11-(soma%11);
+			if((resultado==10)||(resultado==11))dig11='0';
+			else dig11 = (char)(resultado+48);
+			if((dig10 == cpf.charAt(9))&&(dig11==cpf.charAt(10)))return true;
+			else return (false);
 			
-			
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch (InputMismatchException erro) {
+			return false;
 		}
 			
 		
