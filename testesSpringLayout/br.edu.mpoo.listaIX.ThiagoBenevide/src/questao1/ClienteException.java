@@ -1,5 +1,8 @@
 package questao1;
 
-public class ClienteException {
+public class ClienteException extends  Exception {
 
+	
+	
+	
 }
