@@ -2,6 +2,8 @@ package questao1;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class BaseDados {
 
 	private static ArrayList<Cliente>clientes;
@@ -27,30 +29,38 @@ public class BaseDados {
 		return null;
 	}
 	
-	public static Cliente buscarCliente(String cpf) {
+	private static Cliente buscarCliente(String cpf) throws CPFException {
 		if(Validador.validarCPF(cpf)) {
 			for(Cliente clienteCurrent: clientes) {
 				if(clienteCurrent.getCpf().equalsIgnoreCase(cpf)) {
 					return clienteCurrent;
 				}
 			}
+		}else {
+			JOptionPane.showMessageDialog(null, Validador.validarCPF(cpf));
 		}
 		return null;
 	}
 	
-	public static boolean isCliente(Cliente cliente) {
+	private static boolean isCliente(Cliente cliente) {
 		if(cliente!=null) {
 			return clientes.contains(buscarCliente(cliente));
 		}
 		return false;
 	}
 	
-	public static boolean adicionarCliente(Cliente cliente) {
-		if(cliente!=null && isCliente(cliente)) {
+	public static boolean adicionarCliente(Cliente cliente) throws ClienteException, CPFException{
+		if(cliente==null) {
+			throw new ClienteException(CLIENTE_NULL);
+		}else if(isCliente(cliente)) {
+			throw new ClienteException(CLIENTE_EXISTE);
+		}else if(Validador.validarCPF(cliente.getCpf())) {
 			clientes.add(cliente);
-			return true;
+			throw new ClienteException("Cliente adicionado com sucesso!");
 		}
 		return false;
+		
+		
 	}
 	
 }
