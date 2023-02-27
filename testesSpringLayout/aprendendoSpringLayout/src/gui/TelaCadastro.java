@@ -33,6 +33,33 @@ public class TelaCadastro extends JFrame{
 		setLayout(new BorderLayout());
 		setResizable(true);
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		/*Cadastro*/
 		JPanel tituloPanel = new JPanel(new BorderLayout());
 		cadastrarLabel = new JLabel("Cadastrar");
