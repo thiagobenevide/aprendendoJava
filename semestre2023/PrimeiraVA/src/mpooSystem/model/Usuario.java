@@ -15,6 +15,7 @@ public class Usuario extends Pessoa {
 		super(nome, cpf);
 		// TODO Auto-generated constructor stub
 	}
+	
 
 	public String getLogin() {
 		return login;

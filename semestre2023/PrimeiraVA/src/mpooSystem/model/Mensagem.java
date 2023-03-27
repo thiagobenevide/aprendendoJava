@@ -8,5 +8,6 @@ public class Mensagem {
 	public static final String USUARIO_LOGIN_ERROR = "Usuário Inválido";
 	public static final String USUARIO_SUCESS = "Usuário adicionado com sucesso";
 	public static final String USUARIO_ERROR = "Erro ao adicionar usuário";
-
+	public static final String CPF_INVALIDO = "CPF Informado é inválido";
+	public static final String REMOVE_USER = "Usuário removido com sucessos";
 }
