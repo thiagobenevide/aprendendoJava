@@ -1,0 +1,43 @@
+- método destroyed libera a memoria.
+	- Não
+
+- para que serve o método finalize em java?
+
+* Baixar aplicativo menor preço
+
+- como representar um atributo final no UML?
+
+- Como e onde indicar os produtos que estão a 1 mês de vencer?
+
+- Porque Date está deprecated? e o que utilizar em troca?
+-
+Assunto 25/07
+	- LocalDateTime e Calendar
+	- Herança: Sobrescrita de método(@Override)
+	
+- Aula 08/08
+	- ArrayList
+	- CRUD
+
+- Aula 15/08
+	- vinculação dinâmica/vinculação tardia
+	- polimorfismo de objeto
+	- composição
+- Aula 22/08 
+	- Interface 2VA
+	- pesquisar sobre padrão de projeto desing pattetn Strategy
+	- implementar vendedor na compra
+	
+classe abstrata
+	- todas as classes filhas concretas, deveram sobrescrever esse metodo
+	
+- Aula 12/09 - semana 12
+	- Java swing
+	- SpingLayout
+	- Jmenu
+	- Eventos
+	
+- Aula 19/09 - semana 13
+	- Exception
+	- Thread
+		- sleep
