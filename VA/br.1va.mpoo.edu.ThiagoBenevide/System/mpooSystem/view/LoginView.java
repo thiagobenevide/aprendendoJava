@@ -22,7 +22,6 @@ public class LoginView extends JFrame{
 	public LoginView() {
 		setSize(210,150);
 		setResizable(false);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
 		
@@ -46,8 +45,24 @@ public class LoginView extends JFrame{
 		
 		add(panelPrincipal, BorderLayout.CENTER);
 		
-		setVisible(true);
-		
 	}
+
+	public JTextField getLoginField() {
+		return loginField;
+	}
+
+	public JPasswordField getSenhaField() {
+		return senhaField;
+	}
+
+	public JButton getEntrarButton() {
+		return entrarButton;
+	}
+
+	public JButton getSairButton() {
+		return sairButton;
+	}
+	
+	
 	
 }

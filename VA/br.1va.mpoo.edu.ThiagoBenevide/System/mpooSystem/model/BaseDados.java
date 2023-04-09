@@ -33,8 +33,17 @@ public class BaseDados {
 	public static boolean isUsuario(Usuario usuario) {
 		if(usuario!=null) {
 			for(Pessoa pessoaCurrent:pessoas) {
-				if(((Usuario)pessoaCurrent).getCpf().equalsIgnoreCase(usuario.getCpf()))
+				if(((Usuario)pessoaCurrent).login.equalsIgnoreCase(usuario.login) && ((Usuario)pessoaCurrent).getSenha().equalsIgnoreCase(usuario.getSenha()))
 					return true;
+			}
+		}
+		return false;
+	}
+	
+	public static boolean isUsuario(String login, String senha) {
+		for(Pessoa pessoaCurrent: pessoas) {
+			if(((Usuario)pessoaCurrent).login.equalsIgnoreCase(login) && ((Usuario)pessoaCurrent).getSenha().equalsIgnoreCase(senha)) {
+				return true;
 			}
 		}
 		return false;
@@ -50,9 +59,13 @@ public class BaseDados {
 	
 	public static boolean adicionarPessoa(Pessoa pessoa) {
 		if(pessoa!=null) {
-			if(ValidadorCPF.validarCPF(pessoa.getCpf()) && !isPessoa(pessoa)) {
-				return pessoas.add(pessoa);
+			if(ValidadorCPF.validarCPF(pessoa.getCpf())) {
+				if(!isPessoa(pessoa)) {
+					pessoas.add(pessoa);
+					return true;
+				}
 			}
+			return false;
 		}
 		return false;
 	}

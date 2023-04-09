@@ -22,7 +22,6 @@ public class ChaveAcessoView extends JFrame{
 	public ChaveAcessoView() {
 		setSize(200,140);
 		setResizable(false);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
 		
@@ -41,12 +40,16 @@ public class ChaveAcessoView extends JFrame{
 		
 		add(panelPrincipal, BorderLayout.CENTER);
 		
-		setVisible(true);
-		
+	}
+
+	public JPasswordField getChaveAcessoField() {
+		return chaveAcessoField;
+	}
+
+	public JButton getValidarButton() {
+		return validarButton;
 	}
 	
-	public static void main(String[] args) {
-		new ChaveAcessoView();
-	}
+	
 	
 }

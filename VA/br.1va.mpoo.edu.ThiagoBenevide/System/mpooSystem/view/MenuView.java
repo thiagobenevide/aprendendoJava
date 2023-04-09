@@ -43,13 +43,20 @@ public class MenuView extends JFrame{
 		SpringUtilities.makeCompactGrid(panelButton, 1, 3, 6, 6, 6, 6);
 		
 		add(panelButton, BorderLayout.CENTER);
-
-		setVisible(true);
 		
 	}
-	
-	public static void main(String[] args) {
-		new MenuView();
+
+	public JButton getLogarButton() {
+		return logarButton;
+	}
+
+	public JButton getCadastrarButton() {
+		return cadastrarButton;
+	}
+
+	public JButton getSairButton() {
+		return sairButton;
 	}
 	
+
 }

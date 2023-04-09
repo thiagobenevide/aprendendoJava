@@ -30,7 +30,6 @@ public class CadastrarView extends JFrame{
 	public CadastrarView(){
 		setSize(200,240);
 		setResizable(false);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
 		
@@ -88,9 +87,57 @@ public class CadastrarView extends JFrame{
 		add(panelPrincipal, BorderLayout.PAGE_START);
 		add(panelRadio, BorderLayout.CENTER);
 		add(panelButton, BorderLayout.PAGE_END);
-		
-		setVisible(true);
 	}
+
+
+
+	public JTextField getNomeField() {
+		return nomeField;
+	}
+
+
+
+	public JTextField getLoginField() {
+		return loginField;
+	}
+
+
+
+	public JTextField getCpfField() {
+		return cpfField;
+	}
+
+
+
+	public JTextField getSenhaField() {
+		return senhaField;
+	}
+
+
+
+	public JButton getAddButton() {
+		return addButton;
+	}
+
+
+
+	public JButton getSairButton() {
+		return sairButton;
+	}
+
+
+
+	public JRadioButton getMasculinoRadio() {
+		return masculinoRadio;
+	}
+
+
+
+	public JRadioButton getFemininoRadio() {
+		return femininoRadio;
+	}
+	
+	
 	
 	
 	

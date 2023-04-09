@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class MensagemView extends JOptionPane{
 	
-	public MensagemView(String msg) {
+	public static void mostrarMensagem(String msg) {
 		showMessageDialog(null, msg);
 	}
 	
