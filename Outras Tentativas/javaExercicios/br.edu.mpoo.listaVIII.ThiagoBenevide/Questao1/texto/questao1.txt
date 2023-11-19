@@ -1,4 +1,0 @@
-Falso - Ao realizar o processo de DownCast pode ser utilizado um objeto de tipo superclasse como subclasse.
-Verdadeiro
-Verdadeiro
-Verdadeiro
