@@ -15,10 +15,8 @@ public class Compra {
 	
 	public Compra(double desconto, double valorTotal) {
 		super();
-		this.id = this.id + 1;
-		Date data = new Date();
-		
-		this.date = new Date(System.currentTimeMillis());
+		id++;
+		this.date = new Date();
 		this.produtos = new ArrayList<Produto>();
 		this.desconto = desconto;
 		this.valorTotal = valorTotal;

@@ -51,19 +51,6 @@ public class BaseDados {
 	}
 	
 	
-	public static boolean atualizarVendas(Compra compra) {
-		if(compra!=null)
-			if(buscarCompra(compra)!=null) {
-				
-			}
-			
-	}
-	
-	public static double totalVendasMes(int mes, int ano) {
-		double totalVendas;
-		for(Venda vendaCurrent: vendas)
-			if
-	}
 	
 	
 	
