@@ -1,5 +1,7 @@
 package questao2;
 
+import javax.swing.JOptionPane;
+
 public class Endereco {
 	private String logradouro;
 	private int numero;
@@ -28,10 +30,16 @@ public class Endereco {
 				&& cidade!=null && cidade.length()>0
 				&& estado!=null && estado.length()>0
 				&& cep!=null && cep.length()>0
-				&& cliente!=null 
-				)
-				cliente.getEnderecos().add(new Endereco(logradouro, numero, bairro, cidade, estado, cep));
-	}
+				&& cliente!=null) {
+			if(BaseDados.possuiEnderecoDuplicado(cliente, new Endereco(logradouro, numero, bairro, cidade, estado, cep))){
+					JOptionPane.showMessageDialog(null, "Endereço do cliente duplicado!");}
+			else {
+					cliente.getEnderecos().add(new Endereco(logradouro, numero, bairro, cidade, estado, cep));
+				}
+			}
+		}
+			 
+	
 
 
 
