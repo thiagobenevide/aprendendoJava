@@ -1,11 +1,13 @@
 package gui;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class Frame1 extends JFrame{
+public class Frame1 extends JFrame {
 	JButton abrirButton;
 	
 	
@@ -19,8 +21,17 @@ public class Frame1 extends JFrame{
 		abrirButton = new JButton("Abrir Outro Frame");
 		add(abrirButton);
 		
-		
 		setVisible(true);
 	}
+
+
+
+
+	public JButton getAbrirButton() {
+		return abrirButton;
+	}
+
+	
+	
 	
 }
