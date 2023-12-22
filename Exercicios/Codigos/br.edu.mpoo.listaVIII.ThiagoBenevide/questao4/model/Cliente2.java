@@ -1,14 +1,14 @@
 package model;
 
-public class Cliente extends UsuarioAbstract2{
+public class Cliente2 extends UsuarioAbstract2{
 	private boolean isReceivePropaganda;
 	
-	public Cliente(String nome, String cpf, String telefone, String email, String senha) {
+	public Cliente2(String nome, String cpf, String telefone, String email, String senha) {
 		super(nome, cpf, telefone, email, senha);
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cliente(String nome, String cpf, String telefone, String email, String senha, boolean isReceivePropaganda) {
+	public Cliente2(String nome, String cpf, String telefone, String email, String senha, boolean isReceivePropaganda) {
 		super(nome, cpf, telefone, email, senha);
 		this.isReceivePropaganda = isReceivePropaganda;
 	}

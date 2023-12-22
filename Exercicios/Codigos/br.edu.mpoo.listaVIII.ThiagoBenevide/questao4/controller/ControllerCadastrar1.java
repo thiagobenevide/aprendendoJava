@@ -10,10 +10,10 @@ import model.Cliente2;
 import model.Funcionario2;
 import view.CadastrarView2;
 
-public class ControllerCadastrar implements ActionListener{
+public class ControllerCadastrar1 implements ActionListener{
 	CadastrarView2 telaCadastro;
 	
-	public ControllerCadastrar() {
+	public ControllerCadastrar1() {
 		this.telaCadastro = new CadastrarView2();
 		controller();
 	}

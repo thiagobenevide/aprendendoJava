@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-public class BaseDados {
+public class BaseDados1 {
 	private static ArrayList<UsuarioAbstract2>usuarios;
 	
 	public static void createBase() {
