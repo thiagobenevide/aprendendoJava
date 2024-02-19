@@ -7,8 +7,5 @@ public interface ValidadorCupomInterface {
 			return true;
 		}
 		return false;
-		
 	}
-	
-	
 }

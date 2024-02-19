@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 import mpooStore.app.App;
 
 public class TempoOferta extends Thread {
-	private static final long TEMPO_OFERTA = 20000;
+	private static final long TEMPO_OFERTA = 200000;
 	
 	public static long getTempoOferta() {
 		return TEMPO_OFERTA;

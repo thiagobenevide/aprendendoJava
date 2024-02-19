@@ -5,8 +5,7 @@ import java.util.Random;
 import mpooStore.app.App;
 
 public class GeradorCupom extends Thread{
-	private static final long GERAR_CUPOM = 5000;
-	private double valorAtualizado = gerarCupom();
+	private static final long GERAR_CUPOM = 1000;
 	
 	@Override
 	public void run() {
@@ -14,11 +13,12 @@ public class GeradorCupom extends Thread{
 		super.run();
 		while(true) {
 			try {
-				valorAtualizado = gerarCupom(); 
-				sleep(GERAR_CUPOM);
+				App.gerenciadorCupom.setValorCupomAtual(gerarCupom());
+				System.out.println(App.gerenciadorCupom.getValorCupomAtual());
 				if(!App.gerenciadorCupom.isOfertaCupom()) {
 					interrupt();
 				}
+				sleep(GERAR_CUPOM);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -32,10 +32,6 @@ public class GeradorCupom extends Thread{
 		
 	}
 
-	public double getValorAtualizado() {
-		return valorAtualizado;
-	}
-	
 	
 	
 }

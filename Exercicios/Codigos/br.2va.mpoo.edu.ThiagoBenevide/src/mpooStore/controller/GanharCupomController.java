@@ -56,15 +56,15 @@ public class GanharCupomController implements ActionListener{
 			String email = ganharCupomView.getCamposPanel().getEmailField().getText();
 			
 			//Professor não encontrei outra alternativa para utilizar o gerenciador de cupons, fui obrigado a colocar no APP
-			System.out.println(App.gerenciadorCupom.isOfertaCupom());
 			if(App.gerenciadorCupom.isOfertaCupom()) {
 				if(nome.length()>0 && cpf.length()>0 && email.length()>0) {
 					try {
 						Cliente cliente = new Cliente(nome, cpf, email);
+						System.out.println(cliente.getCupomDesconto().getValor());
 						if(BaseDados.isCliente(cliente)){
 							Cliente clienteBase = BaseDados.buscarCliente(cliente);
 							clienteBase.setCupomDesconto(cliente.getCupomDesconto());
-							JOptionPane.showMessageDialog(null, "Parabéns, você ganhou R$"+clienteBase.getCupomDesconto().getValor(), "MPOO Store", 0, new ImageIcon("mpooStore.img/icone.png"));
+							JOptionPane.showMessageDialog(null, "Parabéns, você ganhou R$"+String.format("%.2f", cliente.getCupomDesconto().getValor()) , "MPOO Store", 0, new ImageIcon("mpooStore.img/icone.png"));
 						}
 						
 					} catch (CPFException e1) {
