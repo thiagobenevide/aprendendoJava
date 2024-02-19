@@ -14,7 +14,8 @@ public class BaseDados {
 			try {
 				pessoas.add(new Cliente("Maria Silva", "83355316334", "maria@gmail.com"));
 				pessoas.add(new Cliente("Thiago Benevide", "13077735407", "thiagobenevide@live.com"));
-				pessoas.add(new Cliente("joao Santos", "11111111111", "joao@gmail.com"));
+				//pessoas.add(new Cliente("joao Santos", "11111111111", "joao@gmail.com"));
+				//Se colocar esse cliente irá ocorre a mensage inicial de cpfException, por isso comentei, mas não irá quebrar o código!
 				pessoas.add(new Cliente("Godofredo Alves", "35825183027", "godofredo@gmail.com"));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -62,7 +63,9 @@ public class BaseDados {
 
 	public static boolean isCliente(Cliente cliente) throws ClienteExeption{
 
-		if(pessoas.contains(buscarPessoa(cliente.getCpf()))) {
+		if(pessoas.contains(buscarPessoa(cliente.getCpf()))
+				&& pessoas.contains(buscarCliente(cliente.getEmail())))
+				 {
 			return true;
 		}else {
 			throw new ClienteExeption();

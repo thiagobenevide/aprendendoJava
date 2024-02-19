@@ -12,14 +12,11 @@ public class App {
 	
 	public static void main(String[] args) {
 		gerenciadorCupom = new GerenciadorCupom();
-		System.out.println(gerenciadorCupom.getValorCupomAtual());
 		BaseDados.createBase();
 		GeradorCupom gC = new GeradorCupom();
 		gC.start();
-		System.out.println(gerenciadorCupom.getValorCupomAtual());
 		TempoOferta tO = new TempoOferta();
 		tO.start();
-		System.out.println(gerenciadorCupom.getValorCupomAtual());
 		
 		new AberturaController();
 		

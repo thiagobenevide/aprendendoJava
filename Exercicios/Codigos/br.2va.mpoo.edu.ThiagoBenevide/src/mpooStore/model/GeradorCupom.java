@@ -5,7 +5,7 @@ import java.util.Random;
 import mpooStore.app.App;
 
 public class GeradorCupom extends Thread{
-	private static final long GERAR_CUPOM = 1000;
+	private static final long GERAR_CUPOM = 5000;
 	
 	@Override
 	public void run() {
@@ -14,11 +14,10 @@ public class GeradorCupom extends Thread{
 		while(true) {
 			try {
 				App.gerenciadorCupom.setValorCupomAtual(gerarCupom());
-				System.out.println(App.gerenciadorCupom.getValorCupomAtual());
+				sleep(GERAR_CUPOM);
 				if(!App.gerenciadorCupom.isOfertaCupom()) {
 					interrupt();
 				}
-				sleep(GERAR_CUPOM);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -54,13 +54,12 @@ public class GanharCupomController implements ActionListener{
 			String cpfTemp = ganharCupomView.getCamposPanel().getCpfFormatField().getText().replace("-", "");
 			String cpf = cpfTemp.replace(".", ""); 
 			String email = ganharCupomView.getCamposPanel().getEmailField().getText();
-			
 			//Professor não encontrei outra alternativa para utilizar o gerenciador de cupons, fui obrigado a colocar no APP
 			if(App.gerenciadorCupom.isOfertaCupom()) {
 				if(nome.length()>0 && cpf.length()>0 && email.length()>0) {
 					try {
 						Cliente cliente = new Cliente(nome, cpf, email);
-						System.out.println(cliente.getCupomDesconto().getValor());
+						CupomDesconto cupom = new CupomDesconto(cliente, App.gerenciadorCupom.CODIGO_CUPOM);
 						if(BaseDados.isCliente(cliente)){
 							Cliente clienteBase = BaseDados.buscarCliente(cliente);
 							clienteBase.setCupomDesconto(cliente.getCupomDesconto());
