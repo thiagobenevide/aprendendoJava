@@ -5,17 +5,16 @@ public abstract class UsuarioAbstract {
 	private String cpf;
 	private String telefone;
 	private String email;
-	private String senha;
+	private String senha = "123456";
 	
 	
 	
-	public UsuarioAbstract(String nome, String cpf, String telefone, String email, String senha) {
+	public UsuarioAbstract(String nome, String cpf, String telefone, String email) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.telefone = telefone;
 		this.email = email;
-		this.senha = senha;
 	}
 	
 	public String getNome() {

@@ -3,10 +3,10 @@ package model;
 import java.util.ArrayList;
 
 public class BaseDados {
-	public static ArrayList<UsuarioAbstract3>usuarios;
+	public static ArrayList<UsuarioAbstract>usuarios;
 	
 	public static void createBase() {
-		usuarios = new ArrayList<UsuarioAbstract3>();
+		usuarios = new ArrayList<UsuarioAbstract>();
 		inicializarBase();
 	}
 	
@@ -14,9 +14,9 @@ public class BaseDados {
 		
 	}
 	
-	public static UsuarioAbstract3 buscarUsuario(UsuarioAbstract3 usuario) {
+	public static UsuarioAbstract buscarUsuario(UsuarioAbstract usuario) {
 		if(usuario!=null) {
-			for(UsuarioAbstract3 usuarioCurrent : usuarios) {
+			for(UsuarioAbstract usuarioCurrent : usuarios) {
 				if(usuarioCurrent.getCpf().equalsIgnoreCase(usuario.getCpf()))
 					return usuarioCurrent;
 			}
@@ -25,9 +25,9 @@ public class BaseDados {
 		return null;
 	}
 	
-	public static UsuarioAbstract3 buscarUsuario(String cpf) {
+	public static UsuarioAbstract buscarUsuario(String cpf) {
 		if(cpf!=null) {
-			for(UsuarioAbstract3 usuarioCurrent : usuarios) {
+			for(UsuarioAbstract usuarioCurrent : usuarios) {
 				if(usuarioCurrent.getCpf().equalsIgnoreCase(cpf))
 					return usuarioCurrent;
 			}
@@ -36,23 +36,23 @@ public class BaseDados {
 		return null;
 	}
 	
-	public static boolean isUsuario(UsuarioAbstract3 usuario) {
+	public static boolean isUsuario(UsuarioAbstract usuario) {
 		if(buscarUsuario(usuario)!=null) {
 			return true;
 		}
 		return false;
 	}
 	
-	public static boolean adicionarUsuario(UsuarioAbstract3 usuario) {
+	public static boolean adicionarUsuario(UsuarioAbstract usuario) {
 		if(isUsuario(usuario)) {
 			return false;
 		}else {
 			usuarios.add(usuario);
+			return true;
 		}
-		return false;
 	}
 	
-	public static boolean removeUsuario(UsuarioAbstract3 usuario) {
+	public static boolean removeUsuario(UsuarioAbstract usuario) {
 		if(isUsuario(usuario)) {
 			usuarios.remove(usuarios.indexOf(buscarUsuario(usuario)));
 			return true;
@@ -60,7 +60,7 @@ public class BaseDados {
 		return false;
 	}
 	
-	public static boolean atualizarUsuario(UsuarioAbstract3 usuarioOld, UsuarioAbstract3 usuarioNew) {
+	public static boolean atualizarUsuario(UsuarioAbstract usuarioOld, UsuarioAbstract usuarioNew) {
 		if(usuarioOld!=null && usuarioNew!=null) {
 			if(isUsuario(usuarioOld)) {
 				if(isUsuario(usuarioNew)) {

@@ -26,9 +26,21 @@ public class TelaInicialController implements ActionListener{
 		}
 		if(e.getSource()==telaInicial.getCadastrarButton()) {
 			telaInicial.setVisible(false);
-			new ControllerCadastrar2();
+			new ControllerCadastrar2(telaInicial);
 		}
 		
 	}
+	
+	
+
+	public TelaInicialView getTelaInicial() {
+		return telaInicial;
+	}
+
+	public void setTelaInicial(TelaInicialView telaInicial) {
+		this.telaInicial = telaInicial;
+	}
+	
+	
 	
 }

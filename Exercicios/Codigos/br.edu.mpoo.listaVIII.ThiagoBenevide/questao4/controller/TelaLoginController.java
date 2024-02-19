@@ -21,7 +21,7 @@ public class TelaLoginController implements WindowListener{
 	
 	private void desativarTela() {
 		telaLogin.setVisible(false);
-		TelaInicialController.telaInicial.setVisible(true);
+		
 	}
 
 	@Override
@@ -32,14 +32,14 @@ public class TelaLoginController implements WindowListener{
 
 	@Override
 	public void windowClosing(WindowEvent e) {
-		desativarTela();
+		System.out.println("TESTE");
 		
 	}
 
 	@Override
 	public void windowClosed(WindowEvent e) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("TESTE2");
 	}
 
 	@Override

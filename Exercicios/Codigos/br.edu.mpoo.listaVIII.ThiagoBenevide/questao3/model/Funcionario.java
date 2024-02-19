@@ -1,16 +1,12 @@
 package model;
 
-public class Funcionario extends UsuarioAbstract3 {
+public class Funcionario extends UsuarioAbstract {
 	private double salario;
 	private String matricula;
 	
-	public Funcionario(String nome, String cpf, String telefone, String email, String senha) {
-		super(nome, cpf, telefone, email, senha);
-		// TODO Auto-generated constructor stub
-	}
-	public Funcionario(String nome, String cpf, String telefone, String email, String senha, double salario,
+	public Funcionario(String nome, String cpf, String telefone, String email, double salario,
 			String matricula) {
-		super(nome, cpf, telefone, email, senha);
+		super(nome, cpf, telefone, email);
 		this.salario = salario;
 		this.matricula = matricula;
 	}

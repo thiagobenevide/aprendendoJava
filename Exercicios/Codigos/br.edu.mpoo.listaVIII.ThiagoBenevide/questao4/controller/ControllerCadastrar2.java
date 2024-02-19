@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
@@ -15,14 +16,17 @@ import view.TelaInicialView;
 
 public class ControllerCadastrar2 implements ActionListener, WindowListener{
 	CadastrarView2 telaCadastro;
+	TelaInicialView telaInicial;
 	
-	public ControllerCadastrar2() {
+	
+	public ControllerCadastrar2(TelaInicialView telaInicial) {
 		telaCadastro = new CadastrarView2();
 		controller();
 	}
 	
 	public void controller() {
 		telaCadastro.getAdicionarButton().addActionListener(this);
+		telaCadastro.addWindowListener(this);
 	}
 	
 	@Override
@@ -60,8 +64,10 @@ public class ControllerCadastrar2 implements ActionListener, WindowListener{
 	}
 	
 	private void retornarTelaInicial() {
+		System.out.println("TESTE @");
 		telaCadastro.setVisible(false);
-		TelaInicialController.telaInicial.setVisible(true);
+		telaInicial.setVisible(true);
+		
 	}
 
 	@Override
@@ -79,7 +85,7 @@ public class ControllerCadastrar2 implements ActionListener, WindowListener{
 	@Override
 	public void windowClosed(WindowEvent e) {
 		// TODO Auto-generated method stub
-		
+		retornarTelaInicial();
 	}
 
 	@Override

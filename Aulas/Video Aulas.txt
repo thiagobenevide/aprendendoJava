@@ -1,0 +1,38 @@
+SEMANA 10 ----------------------------------------------------------------
+
+
+Assunto (Básico): Revisão Componentes Gráficos e Tratamento de Eventos
+
+1) VídeoAula Assíncrona (2022.1) (Componentes Gráficos, Tratamento de Eventos e MVC) (https://drive.google.com/file/d/1GwKap6YA9zmTcKzi3kogD6PrsUYCmC-n/view)
+
+ 
+
+Assunto (Intermediário): Componentes Gráficos / Tratamento  de Eventos por maneiras distintas / e migração de projeto para MVC:
+
+2) VídeoAula Assíncrona (2021.1) (Componentes Gráficos, Tratamento de Eventos e MVC) (https://drive.google.com/file/d/1w1zyfdZ4orvD8ohVrjC-X76_KVicVO7Z/view)
+
+
+
+Assunto  (Avançado):  Componentes Gráficos com Menu / Tratamento de Eventos / MVC
+
+3) VídeoAula Assíncrona: SIsyema cadastro - Abertura, Validação Login, Menu (https://drive.google.com/file/d/1hNtfQik8NcgW0CR4X0tAy89Lg_Ie6PqX/view)
+
+SEMANA 12 -----------------------------------------------------------------
+1) VídeoAula Síncrona (2023.1) (Tratamento de Exceção , Componentes Gráficos (inclusive Menu e JPanel), Tratamento de Eventos (inclusive WindowListener e CaretLister), Adpater e MVC) (https://drive.google.com/file/d/1gQbpiO_lpxF0ftRxaNLlmpIz0PcJ6Oxn/view) 
+
+Observer - https://drive.google.com/file/d/1-MOcM1nVdArp1Jome7SY5cdiw6WTtJN_/view
+
+SEMANA 13 -----------------------------------------------------------------
+ Vídeo Aula - https://drive.google.com/file/d/15RxA8J-ojcX0x98oM9iqDrk3BFIwtJHh/view
+
+Ficou curioso sobre como evitar duplicidade de código? Estude mais um pouco sobre Strategy (material opcional, não é tema de avaliação):
+
+1) Strategy: 
+https://www.digitalocean.com/community/tutorials/strategy-design-pattern-in-java-example-tutorial
+https://www.devmedia.com.br/introducao-aos-default-methods-do-java-8/36876
+
+2) VideoAula Assíncrona: https://drive.google.com/file/d/1qBgQX-nNlvvYc6Ubh1oRjTQIfWqYf6ph/view
+
+3) Threard - https://drive.google.com/file/d/1lyef1l9bKEM3yGDYhfFKrRVVc991XpUl/view
+	Entrada e Saída - https://drive.google.com/file/d/1SA-nCE_WXenUh7qW982KoYJ1C4los9S1/view
+

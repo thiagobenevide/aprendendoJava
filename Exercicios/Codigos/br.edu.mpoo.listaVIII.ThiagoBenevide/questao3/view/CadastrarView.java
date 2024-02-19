@@ -17,11 +17,12 @@ import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
 public class CadastrarView extends JFrame{
-	JLabel cadastrarLabel, tipoLabel, nomeLabel, cpfLabel, foneLabel, emailLabel;
-	JTextField nomeField, foneField, emailField;
+	JLabel cadastrarLabel, tipoLabel, nomeLabel, cpfLabel, foneLabel, emailLabel, salarioLabel, matriculaLabel;
+	JTextField nomeField, foneField, emailField, salarioField, matriculaField;
 	JFormattedTextField cpfFormatField;
 	JRadioButton clienteRadio, funcionarioRadio;
 	JButton adicionarButton;
+
 	JCheckBox aceitarPropagandaCheckBox;
 	ButtonGroup tipoGroup;
 	JPanel panelGroup, panelHeader;
@@ -29,11 +30,10 @@ public class CadastrarView extends JFrame{
 	
 	public CadastrarView() {
 		setSize(330,220);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setLayout(new FlowLayout());
-		setResizable(false);
-		
+		setResizable(false);		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		cadastrarLabel = new JLabel("Cadastrar");
 		cadastrarLabel.setFont(new Font("Roboto", Font.BOLD, 20));
@@ -42,6 +42,10 @@ public class CadastrarView extends JFrame{
 		cpfLabel = new JLabel("CPF: ");
 		foneLabel = new JLabel("Fone: ");
 		emailLabel = new JLabel("E-mail: ");
+		matriculaLabel = new JLabel("Matrícula: ");
+		matriculaLabel.setVisible(false);
+		salarioLabel = new JLabel("Salário: ");
+		salarioLabel.setVisible(false);
 		
 		clienteRadio = new JRadioButton("Cliente", true);
 		funcionarioRadio = new JRadioButton("Funcionario");
@@ -58,6 +62,10 @@ public class CadastrarView extends JFrame{
 		nomeField = new JTextField(25);
 		foneField = new JTextField(25);
 		emailField = new JTextField(25);
+		matriculaField = new JTextField(20);
+		matriculaField.setVisible(false);
+		salarioField = new JTextField(20);
+		salarioField.setVisible(false);
 		
 		try {
 			cpfFormatField = new JFormattedTextField(new MaskFormatter("###.###.###-##"));
@@ -78,6 +86,11 @@ public class CadastrarView extends JFrame{
 		add(foneField);
 		add(emailLabel);
 		add(emailField);
+		add(matriculaLabel);
+		add(matriculaField);
+		add(salarioLabel);
+		add(salarioField);
+		
 		
 		aceitarPropagandaCheckBox = new JCheckBox("Aceita receber propaganda");
 		adicionarButton = new JButton("Adicionar");
@@ -95,6 +108,42 @@ public class CadastrarView extends JFrame{
 		
 		setVisible(true);
 	}
+
+	
+	public JTextField getSalarioField() {
+		return salarioField;
+	}
+
+
+	public void setSalarioField(JTextField salarioField) {
+		this.salarioField = salarioField;
+	}
+
+
+	public JLabel getSalarioLabel() {
+		return salarioLabel;
+	}
+
+
+	public JLabel getMatriculaLabel() {
+		return matriculaLabel;
+	}
+
+
+	public JTextField getMatriculaField() {
+		return matriculaField;
+	}
+
+
+	public void setMatriculaField(JTextField matriculaField) {
+		this.matriculaField = matriculaField;
+	}
+
+
+	public void setAdicionarButton(JButton adicionarButton) {
+		this.adicionarButton = adicionarButton;
+	}
+
 
 
 	public JTextField getNomeField() {
