@@ -22,12 +22,12 @@ public class AdocaoController implements ActionListener{
 	AdocaoView adocaoView;
 	private WindowHandler windowHandler;
 	private IndexView telaIndexView;
+	
 	public AdocaoController(IndexView indexView) {
 		adocaoView = new AdocaoView();
 		windowHandler = new WindowHandler();
 		telaIndexView = indexView;
-		controller();
-		
+		controller();	
 		
 	}
 	
@@ -67,11 +67,10 @@ public class AdocaoController implements ActionListener{
 		if(e.getSource()==adocaoView.getAdotarButton()) {
 			try {
 				Proprietario propTemp = new Proprietario(nome, cpf, email, fone);
-				Proprietario propTemp2 =BaseDados.buscarProprietario("13077735407"); 
+				Proprietario propTemp2 =BaseDados.buscarProprietario(propTemp.getCpf()); 
 				if(propTemp2 != null) {					
 					if(cachorroSelect) {
 						boolean status =BaseDados.addAdocao(propTemp2, "cachorro");
-						System.out.println(status);
 						new MensagemView().exibirMensagem("Parabéns em instante você terá o seu cachorro!");
 						new MensagemView().exibirMensagem("Parabéns você ganhou um brinde de R$"+propTemp2.getBrinde());
 					}else if(gatoSelect) {
@@ -89,7 +88,6 @@ public class AdocaoController implements ActionListener{
 					}
 
 				}
-				
 			} catch (CPFException e1) {
 				new MensagemView().exibirMensagemFalhaSistema("Erro CPF inválido");
 			} catch (AdocaoException e2) {

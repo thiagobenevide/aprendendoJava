@@ -86,7 +86,7 @@ public class CamposPanel extends JPanel{
 		
 		
 
-		SpringUtilities.makeCompactGrid(this, 5, 2,0 , 0, 0, 0);
+		SpringUtilities.makeCompactGrid(this, 5, 2, 5 , 5, 5, 5);
 		
 		
 		

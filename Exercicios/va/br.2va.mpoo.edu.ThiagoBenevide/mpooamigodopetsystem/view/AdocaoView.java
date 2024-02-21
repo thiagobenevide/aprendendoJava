@@ -2,6 +2,7 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.Font;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -32,6 +33,7 @@ public class AdocaoView extends JFrame{
 		
 		//Labels
 		tituloLabel = new JLabel("Dados Adoção");
+		tituloLabel.setFont(new Font("ARIAL", Font.BOLD, 20));
 		
 			adotarButton = new JButton("Adotar");
 		

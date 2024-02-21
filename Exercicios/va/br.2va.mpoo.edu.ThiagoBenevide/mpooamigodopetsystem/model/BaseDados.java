@@ -28,14 +28,14 @@ public class BaseDados {
 	}
 	
 	public static Proprietario buscarProprietario (String cpf){
-		if (cpf==null)
-			return null;
-		
-		for (Proprietario proprietarioCurrent:proprietarios)
-			if (proprietarioCurrent.getCpf().equalsIgnoreCase(cpf))
-				return proprietarioCurrent;
-		
+		if (cpf!=null) {
+			for (Proprietario proprietarioCurrent:proprietarios)
+				if (proprietarioCurrent.getCpf().equalsIgnoreCase(cpf))
+					return proprietarioCurrent;			
+		}
 		return null;
+			
+		 
 	}
 	
 	public static boolean addProprietario(Proprietario proprietario){
