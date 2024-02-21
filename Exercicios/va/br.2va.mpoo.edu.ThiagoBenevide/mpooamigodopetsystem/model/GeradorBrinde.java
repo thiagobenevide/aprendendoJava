@@ -8,7 +8,7 @@ public class GeradorBrinde extends Thread{
 	private static long GERAR_BRINDE = 500;
 	
 	private int gerarBrinde() {
-		return new Random().nextInt(100);
+		return new Random().nextInt(101);
 	}
 	
 	@Override

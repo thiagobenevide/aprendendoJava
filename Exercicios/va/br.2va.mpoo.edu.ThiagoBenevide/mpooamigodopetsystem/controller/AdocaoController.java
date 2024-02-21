@@ -46,8 +46,6 @@ public class AdocaoController implements ActionListener{
 			adocaoView.setVisible(false);
 			telaIndexView.setVisible(true);
 		}
-		
-		
 	}
 	
 	
@@ -71,29 +69,36 @@ public class AdocaoController implements ActionListener{
 				if(propTemp2 != null) {					
 					if(cachorroSelect) {
 						boolean status =BaseDados.addAdocao(propTemp2, "cachorro");
-						new MensagemView().exibirMensagem("Parabéns em instante você terá o seu cachorro!");
-						new MensagemView().exibirMensagem("Parabéns você ganhou um brinde de R$"+propTemp2.getBrinde());
+						new MensagemView().exibirMensagem("Cadastro realizado com sucesso! Em breve você estará com seu amigo pet!");
+						new MensagemView().exibirMensagem("Parabéns, você recebeu um brinde de R$"+propTemp2.getBrinde());
 					}else if(gatoSelect) {
 						BaseDados.addAdocao(propTemp2, "gato");
-						new MensagemView().exibirMensagem("Parabéns em instante você terá o seu gato!");
-						new MensagemView().exibirMensagem("Parabéns você ganhou um brinde de R$"+propTemp2.getBrinde());
+						new MensagemView().exibirMensagem("Cadastro realizado com sucesso! Em breve você estará com seu amigo pet!");
+						new MensagemView().exibirMensagem("Parabéns, você recebeu um brinde de R$"+propTemp2.getBrinde());
 					}else if(coelhoSelect) {
 						BaseDados.addAdocao(propTemp2, "coelho");
-						new MensagemView().exibirMensagem("Parabéns em instante você terá o seu coelho!");
-						new MensagemView().exibirMensagem("Parabéns você ganhou um brinde de R$"+propTemp2.getBrinde());
+						new MensagemView().exibirMensagem("Cadastro realizado com sucesso! Em breve você estará com seu amigo pet!");
+						new MensagemView().exibirMensagem("Parabéns, você recebeu um brinde de R$"+propTemp2.getBrinde());
 					}else if(semPreferenciaSelect) {
 						BaseDados.addAdocao(propTemp2, "sempreferncia");
-						new MensagemView().exibirMensagem("Parabéns em instante você terá o seu animal!");
-						new MensagemView().exibirMensagem("Parabéns você ganhou um brinde de R$"+propTemp2.getBrinde());
+						new MensagemView().exibirMensagem("Cadastro realizado com sucesso! Em breve você estará com seu amigo pet!");
+						new MensagemView().exibirMensagem("Parabéns, você recebeu um brinde de R$"+propTemp2.getBrinde());
 					}
-
 				}
 			} catch (CPFException e1) {
 				new MensagemView().exibirMensagemFalhaSistema("Erro CPF inválido");
 			} catch (AdocaoException e2) {
-				new MensagemView().exibirMensagemFalhaSistema("Erro nao foi possível realizar a adoção");
+				new MensagemView().exibirMensagemFalhaSistema("Erro ao realizar adoção! Entre em contato em (87) 99999-9999");
 			} catch (AnimalException e3) {
-				new MensagemView().exibirMensagemFalhaSistema("Não há animais desse tipo para adotar");
+				if(cachorroSelect) {
+					new MensagemView().exibirMensagemFalhaSistema("Não existe um cachorro disponível. Adote outro tipo de animal!");
+				}else if(gatoSelect) {
+					new MensagemView().exibirMensagemFalhaSistema("Não existe um gato disponível. Adote outro tipo de animal!");
+				}else if(coelhoSelect) {
+					new MensagemView().exibirMensagemFalhaSistema("Não existe um coelho disponível. Adote outro tipo de animal!");
+				}else {
+					new MensagemView().exibirMensagemFalhaSistema("Não existe outro animal disponível. Adote outro tipo de animal!");
+				}
 			} catch (Exception e4) {
 				new MensagemView().exibirMensagemFalhaSistema("Erro inesperado" + e4.getMessage());
 			}
